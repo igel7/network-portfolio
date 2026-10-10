@@ -4,7 +4,7 @@
 
 A browser-based map of a bipartite network with live GPU force layout, built for network-analytics and graph-analytics audiences.
 
-> Live demo: https://igel7.github.io/network-portfolio/ (not yet published)
+> Live demo: https://igel7.github.io/network-portfolio/ (in development: layout and dragging work; selection and drag-state feedback are being fixed)
 
 ## What it shows
 
