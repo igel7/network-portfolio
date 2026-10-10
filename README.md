@@ -6,6 +6,8 @@ A browser-based map of a bipartite network with live GPU force layout, built for
 
 > Live demo: https://igel7.github.io/network-portfolio/ (in development: layout and dragging work; selection and drag-state feedback are being fixed)
 
+![Live force layout settling in the browser](media/demo.gif)
+
 ## What it shows
 
 - **Now: explore the network.** Start the force layout and watch nodes of two types settle. Drag a node and its neighbours respond through the simulation.
