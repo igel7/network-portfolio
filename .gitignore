@@ -1,0 +1,27 @@
+# Licensed / confidential data. Never commit.
+data/
+*.csv
+*.xlsx
+# Only the reviewed graph asset is eligible for publication (owner-approved exception).
+!site/public/data/
+site/public/data/*
+!site/public/data/network.json
+# Data preparation scripts name the source dataset and its columns. Local only until the owner decides otherwise.
+scripts/
+
+# Internal agent documents and shared notes. Local only; not part of the public repository.
+AGENTS.md
+CLAUDE.md
+docs/
+memory/
+.claude/
+.codex/
+
+# Build and environment
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.log
+.env
+.env.*

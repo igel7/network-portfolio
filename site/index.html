@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Who Falls Next</title>
+  <meta name="description" content="Explore a bipartite network in the browser with live GPU force layout." />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <script type="module" src="./src/shell/main.ts"></script>
+</head>
+<body>
+  <header class="wfn-header"><div class="wfn-wrap">
+    <a class="wfn-brand" href="./index.html">Who Falls Next</a>
+    <nav class="wfn-nav" aria-label="Site">
+      <a href="./index.html">Home</a>
+      <a href="./demo.html">Demo</a>
+      <a href="./about.html">About</a>
+    </nav>
+  </div></header>
+
+  <main class="wfn-main"><div class="wfn-wrap">
+    <section class="wfn-hero">
+      <h1>Who connects to whom, and who would feel it if one node fell?</h1>
+      <p class="wfn-lead">A browser-based map of a bipartite network: nodes of two types and the links between them. Run the layout live, drag a node and watch its neighbours respond.</p>
+      <div class="wfn-actions">
+        <a class="wfn-btn wfn-btn--primary" href="./demo.html">Open the demo</a>
+        <a class="wfn-btn" href="#how">How it works</a>
+        <a class="wfn-btn" href="./about.html">About</a>
+      </div>
+    </section>
+
+    <section class="wfn-section" id="what">
+      <h2>What you can do</h2>
+      <div class="wfn-cards">
+        <div class="wfn-card">
+          <span class="wfn-tag wfn-tag--now">Now</span>
+          <h3>Explore the network</h3>
+          <p>Start the force layout and watch thousands of nodes of two types settle into shape. Drag any node; the surrounding nodes move with it.</p>
+        </div>
+        <div class="wfn-card">
+          <span class="wfn-tag wfn-tag--planned">Planned</span>
+          <h3>Failure impact</h3>
+          <p>Pick a node and follow a stylised failure propagation round by round, with the most affected nodes listed.</p>
+        </div>
+        <div class="wfn-card">
+          <span class="wfn-tag wfn-tag--planned">Planned</span>
+          <h3>Hidden groups</h3>
+          <p>Find groups of nodes whose neighbours overlap more than node degrees alone would predict.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wfn-section" id="how">
+      <h2>How it works</h2>
+      <p>Everything runs in your browser. <a href="https://github.com/cosmograph-org/cosmos" rel="noopener">cosmos.gl</a> computes the force layout on the GPU through WebGL and draws the graph. There is no server.</p>
+      <p>The data is anonymised bipartite-network connectivity with artificial link weights. The data source is not disclosed. Identifiers are replaced, and link weights are sampled from a fitted distribution rather than taken from the source. Any propagation model shown later is stylised and illustrative only.</p>
+      <ul class="wfn-notes">
+        <li>Requires a browser with WebGL. WebGPU is not needed.</li>
+        <li>Data preparation, modelling, analysis design and the interface are the author's own work.</li>
+      </ul>
+    </section>
+  </div></main>
+
+  <footer class="wfn-footer"><div class="wfn-wrap">
+    <span>&copy; <span id="wfn-year"></span> Ryotaro Yasui. All rights reserved.</span>
+    <span>GPU layout and rendering by <a href="https://github.com/cosmograph-org/cosmos" rel="noopener">cosmos.gl</a> (MIT).</span>
+  </div></footer>
+</body>
+</html>

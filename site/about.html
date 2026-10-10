@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>About · Who Falls Next</title>
+  <meta name="description" content="About the author and how this site was built." />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <script type="module" src="./src/shell/main.ts"></script>
+</head>
+<body>
+  <header class="wfn-header"><div class="wfn-wrap">
+    <a class="wfn-brand" href="./index.html">Who Falls Next</a>
+    <nav class="wfn-nav" aria-label="Site">
+      <a href="./index.html">Home</a>
+      <a href="./demo.html">Demo</a>
+      <a href="./about.html">About</a>
+    </nav>
+  </div></header>
+
+  <main class="wfn-main"><div class="wfn-wrap">
+    <section class="wfn-section wfn-section--first">
+      <h1>Ryotaro Yasui</h1>
+      <p><a href="https://github.com/igel7" rel="noopener">GitHub</a> &middot; <a href="https://www.linkedin.com/in/ryotaro-yasui-778220334" rel="noopener">LinkedIn</a></p>
+    </section>
+
+    <section class="wfn-section">
+      <h2>How this was built</h2>
+      <p><a href="https://github.com/cosmograph-org/cosmos" rel="noopener">cosmos.gl</a> (MIT) provides the GPU force layout and rendering in the browser. The data preparation, modelling, analysis design and the interface are my own work.</p>
+      <p>The network is anonymised bipartite-network connectivity with artificial link weights. The data source is not disclosed. Identifiers are replaced and weights are sampled from a fitted distribution; they are not the source values. Planned propagation and group-detection features will be stylised models, illustrative only.</p>
+    </section>
+
+    <section class="wfn-section">
+      <h2>Licence</h2>
+      <p>All rights reserved. The source is published for review only. cosmos.gl is used under its MIT licence.</p>
+    </section>
+  </div></main>
+
+  <footer class="wfn-footer"><div class="wfn-wrap">
+    <span>&copy; <span id="wfn-year"></span> Ryotaro Yasui. All rights reserved.</span>
+    <span>GPU layout and rendering by <a href="https://github.com/cosmograph-org/cosmos" rel="noopener">cosmos.gl</a> (MIT).</span>
+  </div></footer>
+</body>
+</html>

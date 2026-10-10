@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Demo · Who Falls Next</title>
+  <meta name="description" content="Live GPU force layout of a bipartite network." />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <script type="module" src="./src/shell/main.ts"></script>
+  <script type="module" src="./src/demo/main.ts"></script>
+</head>
+<body>
+  <header class="wfn-header"><div class="wfn-wrap">
+    <a class="wfn-brand" href="./index.html">Who Falls Next</a>
+    <nav class="wfn-nav" aria-label="Site">
+      <a href="./index.html">Home</a>
+      <a href="./demo.html">Demo</a>
+      <a href="./about.html">About</a>
+    </nav>
+  </div></header>
+
+  <main class="wfn-main"><div class="wfn-wrap">
+    <div class="wfn-demo-intro">
+      <h1>Bipartite network</h1>
+      <p>Press the layout control to let the network settle. Drag a node to see its neighbours respond. Nodes belong to one of two types; link width reflects an artificial weight.</p>
+    </div>
+
+    <div class="wfn-demo-frame">
+      <div id="network-demo-root"></div>
+    </div>
+
+    <p class="wfn-demo-foot">Anonymised bipartite-network connectivity with artificial link weights. Data source not disclosed. Illustrative only.</p>
+  </div></main>
+
+  <footer class="wfn-footer"><div class="wfn-wrap">
+    <span>&copy; <span id="wfn-year"></span> Ryotaro Yasui. All rights reserved.</span>
+    <span>GPU layout and rendering by <a href="https://github.com/cosmograph-org/cosmos" rel="noopener">cosmos.gl</a> (MIT).</span>
+  </div></footer>
+</body>
+</html>
