@@ -180,6 +180,11 @@
 
 .nd-error { color: #fda4af; }
 
+.nd-propagation { border-top: 1px solid #334155; padding-top: 14px; }
+.nd-round { display: block; width: 100%; margin: 10px 0; }
+.nd-top { padding-left: 20px; font-variant-numeric: tabular-nums; }
+.nd-score-status { color: #aebdd0; font-size: 0.8125rem; }
+
 .nd-disclosure {
   margin: 0;
   padding: 12px 16px;

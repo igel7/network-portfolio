@@ -13,6 +13,8 @@ export interface NetworkEngine {
   reset(): void;
   fit(): void;
   select(index: number | undefined): void;
+  stress(values?: Float32Array): void;
+  scores(values: Float32Array): void;
   destroy(): void;
 }
 
@@ -23,6 +25,8 @@ export async function createEngine(container: HTMLDivElement, data: GraphData, c
   let suppressClickUntil = 0;
   let destroyed = false;
   let settleTimer: ReturnType<typeof setTimeout> | undefined;
+  const baseColors = new Float32Array(data.nodes.length * 4);
+  data.nodes.forEach((node, i) => baseColors.set(node.role === 'alpha' ? [0.22, 0.83, 0.91, 1] : [1, 0.67, 0.26, 1], i * 4));
   const clearSettle = () => { clearTimeout(settleTimer); settleTimer = undefined; };
   const announce = (state: State) => { if (!destroyed) callbacks.onState(state); };
   const graph = new Graph(container, {
@@ -126,6 +130,20 @@ export async function createEngine(container: HTMLDivElement, data: GraphData, c
     },
     fit() { graph.fitView(350, 0.12, intended === 'running' || dragging); },
     select,
+    stress(values) {
+      const colors = baseColors.slice();
+      if (values) for (let i = 0; i < values.length; i++) {
+        const h = values[i];
+        colors[i * 4] = colors[i * 4] * (1 - h) + h;
+        colors[i * 4 + 1] *= 1 - h * 0.9;
+        colors[i * 4 + 2] *= 1 - h * 0.8;
+      }
+      graph.setPointColors(colors); graph.render(undefined, 0);
+    },
+    scores(values) {
+      graph.setPointSizes(Float32Array.from(values, value => 3 + 9 * Math.sqrt(value)));
+      graph.render(undefined, 0);
+    },
     destroy() { destroyed = true; clearSettle(); observer.disconnect(); graph.destroy(); },
   };
 }
